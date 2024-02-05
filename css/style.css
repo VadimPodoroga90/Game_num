@@ -1,0 +1,20 @@
+body {
+    background-image:url(../img/background.jpg);
+    background-size: cover;
+}
+
+.card {
+   background-color: rgba(0, 0, 0, 0.832);
+    
+}
+
+.question {
+    color: rgb(200, 207, 215);
+}
+
+#answerField {
+    display: inline-block;
+    height: 200px;
+    color: rgb(200, 207, 215);
+}
+
