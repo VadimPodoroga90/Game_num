@@ -1,4 +1,4 @@
-  openPrompt()
+openPrompt()
 
 let minValue
     , maxValue
@@ -22,6 +22,7 @@ document.querySelector('#btnModal').addEventListener('click', () => {
     alertText.innerText = `Загадайте любое целое число от ${minValue} до ${maxValue}, а я его угадаю`
     answerNumber = Math.floor((minValue + maxValue) / 2);
     orderNumber = 1;
+    orderNumberField.innerText = orderNumber;
     phraseRandomQues();
 
 });
@@ -58,12 +59,12 @@ document.querySelector('#btnOver').addEventListener('click', () => {
 document.querySelector('#btnLess').addEventListener('click', () => {
 
     if (gameRun) {
-        if (minValue === maxValue || maxValue <= -998) {
+        if (minValue === maxValue) {
             phraseRandomEnd();
             gameRun = false;
         } else {
-            maxValue = answerNumber - 0;
-            answerNumber = Math.floor((minValue + maxValue) / 2);
+            maxValue = answerNumber - 1;
+            answerNumber = Math.ceil((minValue + maxValue) / 2);
             orderNumber++;
             orderNumberField.innerText = orderNumber;
             phraseRandomQues();
@@ -177,18 +178,22 @@ function phraseRandomEqual() {
 
 function defaultValues() {
     if (isNaN(minValue) || isNaN(maxValue)) {
-        minValue = 0, maxValue = 999;
+        minValue = -999, maxValue = 999;
         inputMin.value = -999, inputMax.value = 999;
         $('#alertDefaultValue').modal('show');
-        alertTextDefault.innerText = 'Не корректное значение \nЗначения будут установлены по умолчанию';
-    } else if (minValue <= -1000 || minValue > 0) {
+        alertTextDefault.innerText = 'Не корректное значение \nЗначение будет установлено по умолчанию';
+    }
+
+    if (minValue <= -1000 || minValue > 0) {
         $('#alertDefaultValue').modal('show')
-        alertTextDefault.innerText = 'Не корректное значение \nУстановлено минимальное значение';
+        alertTextDefault.innerText = 'Не корректное значение \nЗначение будет установлено по умолчанию';
         minValue = -999;
         inputMin.value = -999
-    } else if (maxValue >= 1000 || maxValue < 0) {
+    }
+    
+    if (maxValue >= 1000 || maxValue < 0) {
         $('#alertDefaultValue').modal('show');
-        alertTextDefault.innerText = 'Не корректное значение \nУстановлено максимальное значение';
+        alertTextDefault.innerText = 'Не корректное значение \nЗначениие будет установлено по умолчанию';
         maxValue = 999;
         inputMax.value = 999;
     }
