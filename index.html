@@ -6,7 +6,7 @@
     <title>Угадайка</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 
 <body>
@@ -52,21 +52,20 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Заголовок модального окна</h1>
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">"Угадайка"</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
                 </div>
                 <div class="modal-body" id="titleModal">
                     <h5>Введите значения для игры</h5>
                 </div>
                 <div class="modal-footer">
-                    <lable>
-                        Введите минимальное число до
-                        <input type="text" value="-999" id="inputMin">
-                    </lable>
-                    <lable>
-                        Введите максимальное число до
-                        <input type="text" value="999" id="inputMax">
-                    </lable>
+
+                    <span>Введите минимальное значение до</span>
+                    <input type="text" value="-999" id="inputMin">
+
+                    <span>Введите максимальное значение до</span>
+                    <input type="text" value="999" id="inputMax">
+
                     <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="btnModal">OK</button>
                 </div>
             </div>
@@ -81,11 +80,11 @@
 
     <!-- Модальное окно -->
     <div class="modal fade" id="alertModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="exampleModalLabel" aria-hidden="true">
+        aria-labelledby="exampleModalLabel1" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Заголовок модального окна</h1>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel1">"Угадайка"</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
                 </div>
                 <div class="modal-body" id="alertText">
@@ -100,11 +99,11 @@
 
 
     <div class="modal fade" id="alertDefaultValue" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="exampleModalLabel" aria-hidden="true">
+        aria-labelledby="exampleModalLabel2" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Заголовок модального окна</h1>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel2">"Угадайка"</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
                 </div>
                 <div class="modal-body" id="alertTextDefault">

@@ -5,7 +5,7 @@ let minValue
     , answerNumber
     , phrase
     , orderNumber
-    , gameRun = true;
+    , gameRun;
 
 const inputMin = document.querySelector('#inputMin')
     , inputMax = document.querySelector('#inputMax')
@@ -24,6 +24,7 @@ document.querySelector('#btnModal').addEventListener('click', () => {
     orderNumber = 1;
     orderNumberField.innerText = orderNumber;
     phraseRandomQues();
+    gameRun = true;
 
 });
 
@@ -31,12 +32,6 @@ document.querySelector('#btnRetry').addEventListener('click', () => {
     $('#promptModal').modal('show');
     minValue = parseInt(inputMin.value);
     maxValue = parseInt(inputMax.value);
-    defaultValues();
-    answerNumber = Math.floor((minValue + maxValue) / 2);
-    phraseRandomQues();
-    orderNumber = 1;
-    orderNumberField.innerText = orderNumber;
-    gameRun = true;
     inputMin.value = -999, inputMax.value = 999;
 
 });
@@ -190,7 +185,7 @@ function defaultValues() {
         minValue = -999;
         inputMin.value = -999
     }
-    
+
     if (maxValue >= 1000 || maxValue < 0) {
         $('#alertDefaultValue').modal('show');
         alertTextDefault.innerText = 'Не корректное значение \nЗначениие будет установлено по умолчанию';
